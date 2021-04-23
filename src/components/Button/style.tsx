@@ -49,9 +49,9 @@ export const DangerButton = styled.button`
 `
 
 export const InsideCircle = styled.div`
-  width: 80px;
-  height: 80px;
-  border-radius: 500px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  border-radius: 100px;
   display: flex;
   align-items: center;
   justify-content: center;

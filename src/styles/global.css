@@ -16,6 +16,10 @@
   animation: rotating 1s linear infinite;
 }
 
+button {
+  padding: 0;
+}
+
 @keyframes rotating {
   from {
     transform: rotate(0deg);

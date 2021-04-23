@@ -20,8 +20,9 @@ const Home: FunctionComponent = () => {
   const handleClickLap = () => {
     addRow({
       id: Math.floor(Math.random() * 100),
-      name: 'Leitura',
+      name: 'Sem título',
       time: '10:00:00',
+      estimate: '1min',
     })
   }
   const handleResetButton = () => {
