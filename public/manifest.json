@@ -1,0 +1,12 @@
+{
+  "short_name": "chronometer",
+  "name": "Chronometer",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "any"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone"
+}

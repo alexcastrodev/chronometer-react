@@ -1,0 +1,45 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.pageContainer {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.rotate {
+  animation: rotating 1s linear infinite;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+*::-webkit-scrollbar-track:vertical {
+  background: white;
+  border-radius: 4px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgba(150, 146, 146, 0.5);
+  border-radius: 4px;
+}
+*::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(150, 146, 146, 0.5);
+  border-radius: 4px;
+}

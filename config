@@ -1,0 +1,6 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+[remote "origin"]
+	url = git@github.com:AlexcastroDev/chronometer-react.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
