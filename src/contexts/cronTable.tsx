@@ -12,17 +12,46 @@ const ChronometerContext = createContext<ICronTableContext>(null)
 
 export const ChronometerTableProvider: FunctionComponent = ({ children }) => {
   const [rows, setTableRow] = useState<ITableRow[]>([])
+  const [modalEditRow, setModalEditRow] = useState<boolean>(false)
+  const [activeRow, setActiveRow] = useState<ITableRow>({} as ITableRow)
 
-  const addRow = useCallback(row => {
+  const addRow = useCallback((row: ITableRow) => {
     setTableRow(setTableRow => [...setTableRow, row])
   }, [])
 
+  const deleteRow = useCallback((index: number) => {
+    setTableRow(setTableRow => {
+      setTableRow.splice(index, 1)
+      return setTableRow
+    })
+    setModalEditRow(false)
+  }, [])
+
+  const updateRow = useCallback((index: number, row: ITableRow) => {
+    setTableRow(setTableRow => {
+      setTableRow[index] = row
+      return setTableRow
+    })
+  }, [])
+
   const clearTable = useCallback(() => {
-    setTableRow([])
+    setTableRow(() => [])
   }, [])
 
   return (
-    <ChronometerContext.Provider value={{ rows, addRow, clearTable }}>
+    <ChronometerContext.Provider
+      value={{
+        rows,
+        addRow,
+        clearTable,
+        modalEditRow,
+        setModalEditRow,
+        setActiveRow,
+        activeRow,
+        deleteRow,
+        updateRow,
+      }}
+    >
       {children}
     </ChronometerContext.Provider>
   )

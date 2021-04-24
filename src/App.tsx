@@ -1,16 +1,30 @@
 import { FunctionComponent } from 'react'
-import useHeight from '@/utils/useHeight'
 import Router from '@/router'
 import '@/styles/global.css'
+import { Grid, Paper } from '@material-ui/core'
+import { makeStyles, createStyles } from '@material-ui/core/styles'
+
+const useStyles = makeStyles(() =>
+  createStyles({
+    root: {
+      flexGrow: 1,
+    },
+    paper: {
+      overflowX: 'hidden',
+      overflowY: 'auto',
+    },
+  }),
+)
 
 const App: FunctionComponent = () => {
-  // used to work around 100vh problems
-  const height = useHeight()
+  const classes = useStyles()
 
   return (
-    <div className="mainContainer" style={{ minHeight: height }}>
-      <Router />
-    </div>
+    <Grid item xs={12}>
+      <Paper className={classes.paper}>
+        <Router />
+      </Paper>
+    </Grid>
   )
 }
 

@@ -35,15 +35,16 @@ export const ChronometerProvider: FunctionComponent = ({ children }) => {
   const increaseSecond = useCallback(
     () =>
       setTimer(time => {
-        const newSetTime: IChronometer = { ...time }
+        const newSetTime = { ...time }
+
         newSetTime.seconds += 1
 
-        if (time.seconds + 1 >= 60) {
+        if (newSetTime.seconds >= 60) {
           newSetTime.seconds = 0
           newSetTime.minutes += 1
         }
 
-        if (time.minutes + 1 >= 60) {
+        if (newSetTime.minutes >= 60) {
           newSetTime.minutes = 0
           newSetTime.hours += 1
         }

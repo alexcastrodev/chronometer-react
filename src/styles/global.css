@@ -18,6 +18,16 @@
 
 button {
   padding: 0;
+  cursor: pointer;
+}
+
+fieldset {
+  border: none;
+  outline: none;
+}
+
+span {
+  font-family: nunito;
 }
 
 @keyframes rotating {
@@ -35,7 +45,7 @@ button {
 }
 
 *::-webkit-scrollbar-track:vertical {
-  background: white;
+  background: rgba(150, 146, 146, 0.5);
   border-radius: 4px;
 }
 

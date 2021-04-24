@@ -13,8 +13,8 @@ export const ChronometerContainer = styled.div`
 `
 
 export const TableContainer = styled.div`
-  margin: 2rem 2rem;
+  padding: 2rem 0;
   height: 100%;
   overflow: auto;
-  flex: 2;
+  flex: 1;
 `

@@ -1,4 +1,4 @@
-import { FunctionComponent, StrictMode } from 'react'
+import { FunctionComponent } from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
@@ -8,15 +8,13 @@ import { theme } from './utils'
 import { ChronometerProvider } from './contexts/chronometer'
 
 const Index: FunctionComponent = () => (
-  <StrictMode>
-    <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <ChronometerProvider>
-          <App />
-        </ChronometerProvider>
-      </ThemeProvider>
-    </BrowserRouter>
-  </StrictMode>
+  <BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <ChronometerProvider>
+        <App />
+      </ChronometerProvider>
+    </ThemeProvider>
+  </BrowserRouter>
 )
 
 ReactDOM.render(<Index />, document.getElementById('root'))
