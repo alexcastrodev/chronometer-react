@@ -18,3 +18,10 @@ export const TableContainer = styled.div`
   overflow: auto;
   flex: 1;
 `
+
+export const MenuIcon = styled.button`
+  max-width: 20px;
+  background: transparent;
+  border: none;
+  margin: 1rem 1rem;
+`

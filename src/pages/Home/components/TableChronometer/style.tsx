@@ -13,6 +13,9 @@ export const useStyles = makeStyles({
     backgroundColor: (props: ITheme) => props.dark.primary,
     color: 'white',
   },
+  tbody: {
+    backgroundColor: (props: ITheme) => props.dark.primary,
+  },
   cell: {
     color: 'white',
   },

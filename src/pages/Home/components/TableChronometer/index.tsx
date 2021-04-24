@@ -49,7 +49,7 @@ const Chronometer: FunctionComponent = () => {
               ))}
             </TableRow>
           </TableHead>
-          <TableBody>
+          <TableBody className={classes.tbody}>
             {rows.map(row => {
               return (
                 <TableRow
