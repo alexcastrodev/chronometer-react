@@ -12,9 +12,7 @@
   },
   "scripts": {
     "start": "react-app-rewired start",
-    "start:hml": "env-cmd -f .env.homolog react-app-rewired start",
     "build": "react-app-rewired build",
-    "build:hml": "env-cmd -f .env.homolog react-app-rewired build",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "pretty": "prettier --write \"./**/*.{ts,tsx,json}\"",
     "prepare": "husky install"
@@ -49,7 +47,6 @@
     "babel-eslint": "^10.1.0",
     "body-parser": "^1.19.0",
     "customize-cra": "^1.0.0",
-    "env-cmd": "^10.1.0",
     "eslint": "^7.16.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-config-standard": "^16.0.2",
