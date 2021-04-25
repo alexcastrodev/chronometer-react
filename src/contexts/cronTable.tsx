@@ -32,6 +32,7 @@ export const ChronometerTableProvider: FunctionComponent = ({ children }) => {
       setTableRow[index] = row
       return setTableRow
     })
+    setActiveRow({} as ITableRow)
   }, [])
 
   const clearTable = useCallback(() => {
