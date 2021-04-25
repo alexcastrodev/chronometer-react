@@ -2,7 +2,7 @@
 
 ## ✨ Demo
 
-<img src="https://github.com/AlexcastroDev/chronometer-react/blob/master/app.png" width="60px">
+<img src="https://github.com/AlexcastroDev/chronometer-react/blob/master/app.png">
 
 `Chronometer` is a chronometer ( of course! ) with some features like:
 
