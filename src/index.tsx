@@ -1,11 +1,12 @@
 import { FunctionComponent } from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
-import reportWebVitals from './reportWebVitals'
+// import reportWebVitals from './reportWebVitals'
 import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import { theme } from './utils'
 import { ChronometerProvider } from './contexts/chronometer'
+import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 
 const Index: FunctionComponent = () => (
   <BrowserRouter>
@@ -19,4 +20,6 @@ const Index: FunctionComponent = () => (
 
 ReactDOM.render(<Index />, document.getElementById('root'))
 
-reportWebVitals()
+serviceWorkerRegistration.register()
+
+// reportWebVitals()
