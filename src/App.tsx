@@ -12,6 +12,7 @@ const useStyles = makeStyles(() =>
     paper: {
       overflowX: 'hidden',
       overflowY: 'auto',
+      display: 'flex',
     },
   }),
 )

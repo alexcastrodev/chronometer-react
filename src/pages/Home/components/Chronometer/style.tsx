@@ -3,6 +3,8 @@ import styled from 'styled-components'
 export const ChronometerContainer = styled.div`
   width: 100%;
   background: ${({ theme }) => theme.dark.primary};
+  display: flex;
+  justify-content: center;
 `
 
 export const TimerContainer = styled.div`
@@ -10,6 +12,11 @@ export const TimerContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+
+  @media (max-height: 480px) {
+    height: 180px;
+    width: 180px;
+  }
 `
 
 export const TimerText = styled.span`
@@ -19,6 +26,9 @@ export const TimerText = styled.span`
   font-weight: bold;
   font-size: 32px;
   line-height: 25px;
+  @media (max-height: 480px) {
+    font-size: 24px;
+  }
 `
 
 export const TimerAnimationContainer = styled.div`

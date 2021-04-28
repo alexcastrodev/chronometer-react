@@ -15,9 +15,9 @@ import { ThemeContext } from 'styled-components'
 import { ITheme } from '@/types'
 
 const columns = [
-  { id: 'name', label: 'Nome', minWidth: 170 },
-  { id: 'time', label: 'Tempo', minWidth: 100 },
-  { id: 'estimate', label: 'Estimado', minWidth: 100 },
+  { id: 'name', label: 'Nome', minWidth: 100 },
+  { id: 'time', label: 'Tempo', minWidth: 80 },
+  { id: 'estimate', label: 'Estimado', minWidth: 80 },
 ]
 
 const Chronometer: FunctionComponent = () => {
