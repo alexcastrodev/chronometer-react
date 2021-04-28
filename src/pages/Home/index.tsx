@@ -1,4 +1,10 @@
-import { FunctionComponent, useLayoutEffect, useState } from 'react'
+import {
+  FunctionComponent,
+  useLayoutEffect,
+  useState,
+  useEffect,
+  useCallback,
+} from 'react'
 import {
   ChronometerContainer,
   ChronometerPage,
@@ -17,13 +23,21 @@ const Home: FunctionComponent = () => {
   const [isDesktopArea, setIsDesktopArea] = useState(false)
   const [isLandscape, setIsLandscape] = useState(false)
 
+  const checkLayout = useCallback(() => {
+    const isLandscape = window.orientation >= 90
+    setIsLandscape(isLandscape)
+    setIsDesktopArea(width >= 720 && height > 500)
+  }, [width, height])
+
   useLayoutEffect(() => {
     return () => {
-      const isLandscape = window.orientation >= 90
-      setIsLandscape(isLandscape)
-      setIsDesktopArea(width >= 720 && height > 500)
+      checkLayout()
     }
-  }, [width, height])
+  }, [checkLayout])
+
+  useEffect(() => {
+    checkLayout()
+  }, [checkLayout])
 
   return (
     <ChronometerPage ref={ref}>
