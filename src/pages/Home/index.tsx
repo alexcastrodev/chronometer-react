@@ -29,6 +29,14 @@ const Home: FunctionComponent = () => {
     setIsDesktopArea(width >= 720 && height > 500)
   }, [width, height])
 
+  window.addEventListener(
+    'orientationchange',
+    function () {
+      checkLayout()
+    },
+    false,
+  )
+
   useLayoutEffect(() => {
     return () => {
       checkLayout()
