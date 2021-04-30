@@ -14,6 +14,11 @@ export const NeutralButton = styled.button`
   > div {
     border: 1px solid ${({ theme }) => theme.dark.primary};
   }
+
+  @media (max-height: 480px) {
+    width: 60px;
+    height: 60px;
+  }
 `
 
 export const ActiveButton = styled.button`
@@ -30,6 +35,11 @@ export const ActiveButton = styled.button`
   > div {
     border: 1px solid white;
   }
+
+  @media (max-height: 480px) {
+    width: 60px;
+    height: 60px;
+  }
 `
 
 export const DangerButton = styled.button`
@@ -45,6 +55,11 @@ export const DangerButton = styled.button`
   justify-content: center;
   > div {
     border: 1px solid white;
+  }
+
+  @media (max-height: 480px) {
+    width: 60px;
+    height: 60px;
   }
 `
 
@@ -64,4 +79,8 @@ export const ButtonText = styled.span`
   font-weight: bold;
   font-size: 18px;
   line-height: 25px;
+
+  @media (max-height: 480px) {
+    font-size: 12px;
+  }
 `
