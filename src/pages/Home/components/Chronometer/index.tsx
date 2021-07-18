@@ -26,7 +26,7 @@ const Chronometer: FunctionComponent = () => {
           )}
 
           <TimerAnimation>
-            <TimerText>{getFormatDate()}</TimerText>
+            <TimerText>{getFormatDate}</TimerText>
           </TimerAnimation>
         </TimerAnimationContainer>
       </TimerContainer>

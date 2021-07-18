@@ -13,21 +13,21 @@ const Home: FunctionComponent = () => {
     continueTimer,
     isTimeActive,
     isTimePaused,
-    reset,
+    lap,
     getFormatDate,
   } = useCronContext()
 
   const { addRow, clearTable } = useCronTableContext()
 
   const handleClickLap = () => {
-    const time = getFormatDate()
+    const time = getFormatDate
     addRow({
       id: Math.floor(Math.random() * 100),
       name: 'Sem título',
       time,
       estimate: '1min',
     })
-    reset()
+    lap()
   }
   const handleResetButton = () => {
     stopTimer()

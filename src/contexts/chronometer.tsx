@@ -3,111 +3,80 @@ import {
   useState,
   FunctionComponent,
   useContext,
-  useCallback,
-  useEffect,
+  useMemo,
 } from 'react'
+import CastroClock from 'castroclock'
 
 export interface IChronometerContext {
-  getFormatDate: () => string
+  getFormatDate: string
   startTimer: () => void
   stopTimer: () => void
   pauseTimer: () => void
   continueTimer: () => void
   reset: () => void
+  lap: () => void
   isTimePaused: boolean
   isTimeActive: boolean
-}
-
-export interface IChronometer {
-  hours: number
-  minutes: number
-  seconds: number
 }
 
 const ChronometerContext = createContext<IChronometerContext>(null)
 
 export const ChronometerProvider: FunctionComponent = ({ children }) => {
-  const [time, setTimer] = useState<IChronometer>({} as IChronometer)
+  const [time, setTimer] = useState<string>('00:00:00')
   const [timerInterval, setTimerInterval] = useState(null)
   const [isTimeActive, setIsTimeActive] = useState(false)
   const [isTimePaused, setIsTimePaused] = useState(false)
 
-  const increaseSecond = useCallback(
-    () =>
-      setTimer(time => {
-        const newSetTime = { ...time }
+  const reset = () => {
+    CastroClock.reset()
+  }
 
-        newSetTime.seconds += 1
+  const lap = () => {
+    CastroClock.lap()
+  }
 
-        if (newSetTime.seconds >= 60) {
-          newSetTime.seconds = 0
-          newSetTime.minutes += 1
-        }
-
-        if (newSetTime.minutes >= 60) {
-          newSetTime.minutes = 0
-          newSetTime.hours += 1
-        }
-
-        return newSetTime
-      }),
-    [],
-  )
-
-  const reset = useCallback(
-    () =>
-      setTimer({
-        hours: 0,
-        minutes: 0,
-        seconds: 0,
-      }),
-    [],
-  )
+  const _onTimer = () => {
+    const _interval = setInterval(() => {
+      setTimer(CastroClock.currentTimeString)
+    }, 1000)
+    setTimerInterval(_interval)
+    setIsTimePaused(false)
+    setIsTimeActive(true)
+  }
 
   const startTimer = () => {
-    setIsTimeActive(true)
-    increaseSecond()
-    const timer = setInterval(() => {
-      increaseSecond()
-    }, 1000)
-    setTimerInterval(timer)
+    _onTimer()
+    CastroClock.start()
   }
 
   const stopTimer = () => {
+    setTimer('00:00:00')
+    clearInterval(timerInterval)
     setIsTimeActive(false)
     setIsTimePaused(false)
-    clearInterval(timerInterval)
-    reset()
+    CastroClock.reset()
   }
 
   const continueTimer = () => {
-    setIsTimePaused(false)
-    const timer = setInterval(() => {
-      increaseSecond()
-    }, 1000)
-    setTimerInterval(timer)
+    _onTimer()
+    CastroClock.continue()
   }
 
   const pauseTimer = () => {
-    setIsTimePaused(true)
+    CastroClock.pause()
     clearInterval(timerInterval)
+    setIsTimePaused(true)
   }
 
-  const getFormatDate = useCallback(() => {
-    const seconds = (time.seconds || 0).toString().padStart(2, '0')
-    const minutes = (time.minutes || 0).toString().padStart(2, '0')
-    const hours = (time.hours || 0).toString().padStart(2, '0')
-    return `${hours}:${minutes}:${seconds}`
+  const getFormatDate: string = useMemo(() => {
+    return time
   }, [time])
-
-  useEffect(() => {
-    reset()
-  }, [reset])
 
   return (
     <ChronometerContext.Provider
       value={{
         reset,
+        lap,
         getFormatDate,
         startTimer,
         stopTimer,
