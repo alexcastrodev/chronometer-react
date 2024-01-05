@@ -54,7 +54,7 @@ Full tech stack [here](/techstack.md)
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [AlexcastroDev/chronometer-react](https://github.com/AlexcastroDev/chronometer-react)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|47<br/>Tools used|01/02/24 <br/>Report generated|
+|49<br/>Tools used|01/05/24 <br/>Report generated|
 |------|------|
 </div>
 
@@ -252,9 +252,9 @@ Full tech stack [here](/techstack.md)
 </table>
 
 
-## <img src='https://img.stackshare.io/group.svg' /> Open source packages (26)</h2>
+## <img src='https://img.stackshare.io/group.svg' /> Open source packages (28)</h2>
 
-## <img width='24' height='24' src='https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png'/> npm (26)
+## <img width='24' height='24' src='https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png'/> npm (28)
 
 |NAME|VERSION|LAST UPDATED|LAST UPDATED BY|LICENSE|VULNERABILITIES|
 |:------|:------|:------|:------|:------|:------|
@@ -279,6 +279,8 @@ Full tech stack [here](/techstack.md)
 |[eslint-plugin-react](https://www.npmjs.com/eslint-plugin-react)|v7.23.2|04/28/21|Alexandro |MIT|N/A|
 |[eslint-plugin-react-hooks](https://www.npmjs.com/eslint-plugin-react-hooks)|v4.2.0|04/28/21|Alexandro |MIT|N/A|
 |[eslint-plugin-standard](https://www.npmjs.com/eslint-plugin-standard)|v5.0.0|04/23/21|Alexandro |MIT|N/A|
+|[husky](https://www.npmjs.com/husky)|v5.2.0|04/23/21|Alexandro |MIT|N/A|
+|[lint-staged](https://www.npmjs.com/lint-staged)|v10.5.4|04/23/21|Alexandro |MIT|N/A|
 |[raw-body](https://www.npmjs.com/raw-body)|v2.4.0|04/23/21|Alexandro |MIT|N/A|
 |[react-app-rewired](https://www.npmjs.com/react-app-rewired)|v2.1.8|04/28/21|Alexandro |MIT|N/A|
 |[react-dom](https://www.npmjs.com/react-dom)|v17.0.2|04/28/21|Alexandro |MIT|N/A|
